@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>მცხეთა - საქართველოს ისტორიული ძეგლი</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #e63946;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 2s ease-in;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 3rem 2rem;
+            line-height: 1.8;
+        }
+
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            transition: transform 0.3s, background-color 0.3s;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeInCard 1s forwards;
+        }
+
+        .card h2 {
+            font-size: 2.4rem;
+            color: #1d3557;
+        }
+
+        .card p {
+            font-size: 1.2rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            background-color: #e63946;
+            color: white;
+        }
+
+        footer {
+            background-color: #1d3557;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInCard {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: #457b9d;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #1d3557;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>მცხეთა</h1>
+        <p>საქართველოს ისტორიული და კულტურული მემკვიდრეობა</p>
+    </header>
+    <main>
+        <div class="card">
+            <h2>მცხეთა: უძველესი ქალაქი</h2>
+            <p>მცხეთა, საქართველოს ერთ-ერთი უძველესი ქალაქია, რომელიც მდებარეობს მდინარე მტკვრისა და Aragvi-ის შესართავთან. ქალაქი, სადაც მდებარეობს მრავალი ისტორიული ძეგლი, მათ შორის სვეტიცხოველი და ჯვარი, წარმოადგენს მნიშვნელოვან ცენტრს საქართველოს კულტურული და რელიგიური ცხოვრებისათვის.</p>
+        </div>
+        <div class="card">
+            <h2>მცხეთის ღირსშესანიშნაობები</h2>
+            <p>მცხეთაში არაერთი სანახაობა და კულტურული მემკვიდრეობის ძეგლი გვხვდება. სვეტიცხოველი, ჯვრის ეკლესია და სხვა მრავალი ძეგლი გვიჩვენებს city's rich history and spiritual significance.</p>
+        </div>
+        <a href="#" class="btn">გაიგე მეტი</a>
+    </main>
+
+</body>
+</html>

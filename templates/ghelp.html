@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Georgia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpe733BOSIZokE2uxy_g89qIYC0XplEmSKvA&s') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #FF6F00;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 20px rgba(0, 0, 0, 0.6);
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .menu {
+            width: 100%;
+            background: linear-gradient(135deg, #FF5722, #FF7043);
+            padding: 14px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .menu ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .menu ul li {
+            margin: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.4s, transform 0.4s ease-in-out;
+            padding: 10px 20px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .menu ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #FFCC80;
+            transition: width 0.4s, left 0.4s;
+            left: 50%;
+        }
+
+        .menu ul li a:hover {
+            color: #FFCC80;
+            transform: scale(1.1);
+        }
+
+        .menu ul li a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .search {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .search .srch {
+            width: 350px;
+            padding: 12px;
+            border: 2px solid #FF7043;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            outline: none;
+            background: rgba(255, 255, 255, 0.6);
+            transition: all 0.4s ease;
+        }
+
+        .search .srch:focus {
+            border-color: #FF5722;
+            box-shadow: 0 0 12px rgba(255, 87, 34, 0.8);
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .search .btn {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #FF5722, #FF7043);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .search .btn:hover {
+            background: linear-gradient(135deg, #FF7043, #FF5722);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1400px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.4s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            filter: brightness(1.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card-content h2 {
+            font-size: 2.1rem;
+            color: #FF5722;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            transition: color 0.4s;
+        }
+
+        .card-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+            transition: color 0.4s;
+        }
+
+        .card-content a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #FF7043;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            transition: background 0.4s, transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        }
+
+        .card-content a:hover {
+            background: #FF5722;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #FF7043;
+            animation: fadeIn 2s ease-out;
+        }
+
+        footer a {
+            color: #FF5722;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.4s, transform 0.3s;
+        }
+
+        footer a:hover {
+            color: #FF7043;
+            transform: scale(1.1);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="ghelp.html">GHELP</a></li>
+            <li><a href="login.html">LOGIN</a></li>
+            <li><a href="register.html">REGISTER</a></li>
+        </ul>
+    </div>
+
+    <div class="search">
+        <input class="srch" type="search" name="" placeholder="Type to text" id="searchInput">
+        <button class="btn" onclick="searchFunction()">Search</button>
+    </div>
+
+    <h1>Discover the Beauty of Georgia</h1>
+    <div class="container">
+        <div class="card">
+            <img src="https://via.placeholder.com/250x150" alt="Kakheti">
+            <div class="card-content">
+                <h2>Kakheti</h2>
+                <p>The land of wine and endless vineyards, where you can explore the rich history and time-honored traditions of Georgian winemaking, set against a picturesque landscape.</p>
+                <a href="kakheti.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x150" alt="Samegrelo">
+            <div class="card-content">
+                <h2>Samegrelo</h2>
+                <p>A region celebrated for its mouthwatering cuisine and stunning landscapes, including the mesmerizing Martvili Canyon, where nature’s beauty and local flavors come together.</p>
+                <a href="samegrelo.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x150" alt="Adjara">
+            <div class="card-content">
+                <h2>Adjara</h2>
+                <p>Renowned for its picturesque Black Sea beaches, charming mountainous villages, and vibrant cultural heritage, blending coastal beauty with rich traditions and history.</p>
+                <a href="adjara.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x150" alt="Abkhazia">
+            <div class="card-content">
+                <h2>Abkhazia</h2>
+                <p>A land where mountains meet the sea, where time lingers in the quiet corners of ancient ruins, and nature whispers the stories of forgotten eras. Its beauty is not just seen, but felt deeply in the soul.</p>
+                <a href="abkhazia.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x150" alt="Imereti">
+            <div class="card-content">
+                <h2>Imereti</h2>
+                <p>Explore ancient cave cities, verdant forests, and historic landmarks that echo the region's deep past. A place where nature and history intertwine, inviting reflection and awe at every turn.</p>
+                <a href="imereti.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x150" alt="Guria">
+            <div class="card-content">
+                <h2>Guria</h2>
+                <p>A hidden gem of nature, where lush landscapes and winding rivers weave through unspoiled villages. Its rich cultural tapestry and traditions make it a place of discovery for those who seek authenticity.</p>
+                <a href="guria.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x150" alt="Tbilisi">
+            <div class="card-content">
+                <h2>Tbilisi</h2>
+                <p>The bustling capital of Georgia, where modern architecture blends seamlessly with historic sites, and a thriving arts scene contrasts with centuries-old traditions. A city where every street tells a story.</p>
+                <a href="tbilisi.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x150" alt="Shida Kartli">
+            <div class="card-content">
+                <h2>Shida Kartli</h2>
+                <p>A region where the power of nature and history come together, from the ancient ruins of Uplistsikhe to the fertile valleys that feed Georgia’s soul. A place to connect with the land’s deep roots.</p>
+                <a href="shida_kartli.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x150" alt="Mtskheta">
+            <div class="card-content">
+                <h2>Mtskheta</h2>
+                <p>One of Georgia’s oldest cities, known for its religious and cultural significance. It is a UNESCO World Heritage site with churches and monasteries that stand as timeless symbols of Georgia’s spiritual history.</p>
+                <a href="mtskheta.html">Learn More</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x150" alt="Kvemo Kartli">
+            <div class="card-content">
+                <h2>Kvemo Kartli</h2>
+                <p>Landscapes of endless vineyards, historic sites, and a rich blend of ancient and modern influences. Kvemo Kartli offers a glimpse into the diverse cultural heritage of Georgia.</p>
+                <a href="kvemo_kartli.html">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function searchFunction() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            let noResults = true;
+
+            cards.forEach(card => {
+                const title = card.querySelector('h2').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+
+                if (title.includes(input) || description.includes(input)) {
+                    card.style.display = 'block'; // Show card
+                    noResults = false;
+                } else {
+                    card.style.display = 'none'; // Hide card
+                }
+            });
+
+            if (noResults) {
+                alert("No results found.");
+            }
+        }
+    </script>
+
+    <footer>
+        <p>Visit Georgia | <a href="about.html">Learn More About Us</a></p>
+    </footer>
+</body>
+</html>

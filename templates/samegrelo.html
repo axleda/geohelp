@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>სამეგრელო - ისტორია და ზღვა</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #f5f0f0, #d4a5a5);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #e74c3c;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideInHeader 2s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 3rem 2rem;
+            line-height: 1.8;
+            font-size: 1.2rem;
+        }
+
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            transition: transform 0.3s, background-color 0.3s;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeInCard 1s forwards;
+        }
+
+        .card h2 {
+            font-size: 2.5rem;
+            color: #2d3e50;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        footer {
+            background-color: #2d3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @keyframes slideInHeader {
+            from {
+                opacity: 0;
+                transform: translateY(-50%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInCard {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #2d3e50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>სამეგრელო</h1>
+        <p>მთები, ზღვა და ტრადიციები</p>
+    </header>
+    <main>
+        <div class="card">
+            <h2>სამეგრელო: ზღვა და მთები</h2>
+            <p>სამეგრელო - საქართველოს ერთ-ერთი უმნიშვნელოვანესი რეგიონია. თავისი ბუნებრივი სილამაზით და ისტორიული ძეგლებით, ის პოპულარული ტურისტული ადგილია. ზღვა, მთები და უძველესი ქალაქები შექმნიან უნიკალურ გარემოს, რომელიც სტუმრებს მუდმივად იზიდავს.</p>
+        </div>
+        <div class="card">
+            <h2>ტურიზმი და კულტურა</h2>
+            <p>სამეგრელოში საუკეთესო გასართობი და კულტურული ადგილები შეიძლება იყოს: სვანეთი, ანაკლია და სხვა. სტუმრები არა მხოლოდ დაისვენებენ, არამედ შეისწავლიან ამ რეგიონს მისი უძველესი კულტურისა და ტრადიციების შესახებ.</p>
+        </div>
+        <a href="#" class="btn">გაიგე მეტი</a>
+    </main>
+
+</body>
+</html>

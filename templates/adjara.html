@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>აჭარა - ზღვა, მთები და ტრადიციები</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #d1f2f7;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to bottom, #1abc9c, #16a085);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: slideIn 2s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #ffffff;
+        }
+
+        main {
+            padding: 3rem 2rem;
+            line-height: 1.8;
+            font-size: 1.2rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            transition: transform 0.3s, background-color 0.3s;
+            opacity: 0;
+            animation: slideUp 1s forwards;
+        }
+
+        .card h3 {
+            font-size: 2rem;
+            color: #1abc9c;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            background-color: #1abc9c;
+            color: white;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #1abc9c;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-top: 1.5rem;
+        }
+
+        .btn:hover {
+            background-color: #16a085;
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #2d3e50;
+            color: white;
+            text-align: center;
+            padding: 1.2rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>აჭარა</h1>
+        <h2>ზღვა, მთები და ტრადიციები</h2>
+    </header>
+
+    <main>
+        <div class="card">
+            <h3>აჭარა: ზღვა და ბუნება</h3>
+            <p>აჭარა - ადგილი, სადაც ზღვა და მთები ერთიანდებიან და ქმნიან გამორჩეულ ბუნებრივ გარემოს. აქ შეგიძლიათ დატკბეთ არაჩვეულებრივი პლაჟებით, ულამაზესი მთებით და უნიკალური კულტურით. აჭარა ერთ-ერთი საუკეთესო ადგილია დასასვენებლად, სადაც აღმოაჩენთ ტრადიციებს, ხელნაკეთ ნივთებს და ძველ ისტორიებს.</p>
+        </div>
+
+        <div class="card">
+            <h3>ტურისტული ღირსშესანიშნაობები</h3>
+            <p>აჭარა გთავაზობთ მრავალფეროვან ტურისტულ ადგილებს: ბათუმის სანაპირო, მტირალას ეროვნული პარკი, ანაკლი, და მამისონის მთის უნიკალური ხედები. ეს ყველაფერი აჭარას განსაკუთრებულ ადგილად აქცევს.</p>
+        </div>
+
+        <div class="card">
+            <h3>კულტურა და ტრადიციები</h3>
+            <p>აჭარას თავისი უნიკალური კულტურა აქვს, რომელიც ნაზად შერწყმულია ევროპულ და აღმოსავლურ ტრადიციებთან. აჭარის სამზარეულო, ხალხური სიმღერები, ცეკვები და ხელნაკეთი ნივთები - ამ ყველაფერს აუცილებლად უნდა შეეხოთ, რათა სრულად შეიგრძნოთ აჭარის გემოვნება და მასპინძლური ურთიერთობა.</p>
+        </div>
+
+        <a href="#" class="btn">გაიგე მეტი</a>
+    </main>
+
+
+
+</body>
+</html>

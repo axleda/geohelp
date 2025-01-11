@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6e7bff, #c7a9f5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .form {
+            background-color: rgba(255, 255, 255, 0.9);
+            width: 350px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .form h2 {
+            text-align: center;
+            font-size: 28px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .form input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form input:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+        }
+
+        .form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .form button:hover {
+            background-color: #45a049;
+        }
+
+        .form .link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .form .link a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .form .link a:hover {
+            text-decoration: underline;
+        }
+
+        .notifications-container {
+            width: 320px;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .error-alert {
+            border-radius: 0.375rem;
+            padding: 1rem;
+            background-color: rgb(254, 242, 242);
+            display: none;
+        }
+
+        .error-svg {
+            color: #F87171;
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .error-prompt-heading {
+            color: #991B1B;
+            font-size: 0.875rem;
+            font-weight: bold;
+        }
+
+        .error-prompt-container {
+            display: flex;
+            flex-direction: column;
+            margin-left: 1.25rem;
+        }
+
+        .error-prompt-wrap {
+            margin-top: 0.5rem;
+            color: #B91C1C;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .error-prompt-list {
+            padding-left: 1.25rem;
+            margin-top: 0.25rem;
+            list-style-type: disc;
+        }
+
+        .loader {
+            display: none;
+            margin: 20px auto;
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #4CAF50;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-size: 18px;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="form">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+        <input type="text" name="username" placeholder="Enter username" required>
+        <input type="email" name="email" placeholder="Enter email" required>
+        <input type="password" name="password" id="password" placeholder="Enter password" required>
+        <button type="submit" class="btn">Sign Up</button>
+
+        <p class="link">Already have an account? <a href="login.html">Login here</a></p>
+    </form>
+
+    <div class="loader" id="loader"></div>
+    <div class="success-message" id="successMessage">Registration Successful! Redirecting...</div>
+
+    <div class="notifications-container" id="errorContainer">
+        <div class="error-alert" id="passwordError">
+            <div class="flex">
+                <div class="error-svg">⚠️</div>
+                <div class="error-prompt-container">
+                    <div class="error-prompt-heading">Your password isn't strong enough</div>
+                    <div class="error-prompt-wrap">
+                        <ul class="error-prompt-list">
+                            <li>Password must be at least 8 characters</li>
+                            <li>Password must include numbers (0-9)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    const form = document.getElementById('signupForm');
+    const passwordInput = document.getElementById('password');
+    const loader = document.getElementById('loader');
+    const successMessage = document.getElementById('successMessage');
+    const errorContainer = document.getElementById('errorContainer');
+    const passwordError = document.getElementById('passwordError');
+
+    function validatePassword(password) {
+        const minLength = 8;
+        const includesNumbers = /\d/;
+        let errors = [];
+
+        if (password.length < minLength) {
+            errors.push('Password must be at least 8 characters');
+        }
+        if (!includesNumbers.test(password)) {
+            errors.push('Password must include numbers (0-9)');
+        }
+
+        return errors;
+    }
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const passwordErrors = validatePassword(passwordInput.value);
+
+        if (passwordErrors.length > 0) {
+            passwordError.style.display = 'block';
+            passwordError.innerHTML = `
+                <div class="flex">
+                    <div class="error-svg">⚠️</div>
+                    <div class="error-prompt-container">
+                        <div class="error-prompt-heading">Your password isn't strong enough</div>
+                        <div class="error-prompt-wrap">
+                            <ul class="error-prompt-list">
+                                ${passwordErrors.map(error => `<li>${error}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else {
+            passwordError.style.display = 'none';
+            loader.style.display = 'block';
+
+            setTimeout(function() {
+                loader.style.display = 'none';
+                successMessage.style.display = 'block';
+
+                setTimeout(function() {
+                    window.location.href = 'login.html';
+                }, 3000);
+            }, 2000);
+        }
+    });
+</script>
+
+</body>
+</html>

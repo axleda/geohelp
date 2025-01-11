@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>კახეთი - ღვინის ქვეყანას</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #e2e9f3, #a0c3d2);
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #8e44ad;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideInHeader 2s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 3rem 2rem;
+            line-height: 1.8;
+            font-size: 1.2rem;
+        }
+
+        .card {
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            transition: transform 0.4s, background-color 0.4s;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeInCard 1s forwards;
+        }
+
+        .card h2 {
+            font-size: 2.5rem;
+            color: #2d3e50;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background-color: #8e44ad;
+            color: white;
+        }
+
+        footer {
+            background-color: #2d3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @keyframes slideInHeader {
+            from {
+                opacity: 0;
+                transform: translateY(-50%);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInCard {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: #8e44ad;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: #2d3e50;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>კახეთი</h1>
+        <p>ღვინის სამშობლო, ტრადიციები და ბუნება</p>
+    </header>
+    <main>
+        <div class="card">
+            <h2>კახეთი: ბუნება და ისტორია</h2>
+            <p>კახეთი - საქართველოს საუკეთესო რეგიონი, სადაც წარმოდგენილია მდიდარი ისტორია, ტრადიციული კულტურა და რა თქმა უნდა, ღვინო. კახეთში მდებარეობს მსოფლიოში ცნობილი ვენახები და ღვინის ქარხნები, სადაც საუკუნოვანი კულტურები ინარჩუნებენ თავიანთ ტრადიციებს.</p>
+        </div>
+        <div class="card">
+            <h2>ტურიზმი და ღვინო</h2>
+            <p>კახეთი მსოფლიოში ცნობილია თავისი ღვინის ტრადიციით. ეს არის ადგილი, სადაც შეგიძლიათ დააგემოვნოთ საუკეთესო ადგილობრივი ღვინოები, რაც კახეთის მაცხოვრებლების უძველესი ხელოვნების ნაწილს წარმოადგენს.</p>
+        </div>
+        <a href="#" class="btn">გაიგე მეტი</a>
+    </main>
+
+</body>
+</html>
