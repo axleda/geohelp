@@ -685,8 +685,8 @@ footer {
     .overview-cards {
         grid-template-columns: 1fr;
     }
-}///////////////////////////////////
-/* From Uiverse.io by Rodrypaladin */
+}
+
 .card {
   width: 210px;
   height: 400px;
@@ -815,6 +815,3 @@ footer {
   transform: translateY(-20px);
 }
 
-
-
-//////////////////////////////

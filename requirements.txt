@@ -2,4 +2,5 @@ Flask
 Flask-WTF
 Flask-Login
 Flask-SQLAlchemy
+flask-bootstrap
 gunicorn

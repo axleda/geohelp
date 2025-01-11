@@ -20,9 +20,9 @@
             <li><a href="ghelp.html">GHELP</a></li>
             <li><a href="login.html">LOGIN</a></li>
             <li><a href="register.html">REGISTER</a></li>
-            <li><a href="report.html">REPORT</a></li>
         </ul>
     </div>
+
 
     <div class="search">
         <input class="srch" type="search" name="" placeholder="Type to text">
@@ -43,19 +43,192 @@
             </p>
         </div>
 
-        <div class="card-wrapper">
-            <div class="card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-x0OnVir_HRP3LzVTk2UYt-DneSxSfI9mMA&s"
-                     alt="Image" class="card__image">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M20 5H4V19L13.2923 9.70649C13.6828 9.31595 14.3159 9.31591 14.7065 9.70641L20 15.0104V5ZM2 3.9934C2 3.44476 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44495 22 3.9934V20.0066C22 20.5552 21.5447 21 21.0082 21H2.9918C2.44405 21 2 20.5551 2 20.0066V3.9934ZM8 11C6.89543 11 6 10.1046 6 9C6 7.89543 6.89543 7 8 7C9.10457 7 10 7.89543 10 9C10 10.1046 9.10457 11 8 11Z"></path>
-                </svg>
-                <div class="card__content">
-                    <p class="card__title">tbceducation</p>
-                    <p class="card__description">მადლობა tbceducation_ის ჯგუფს რომ მომცა განათლება რომ შემქმნა მსგავსი
-                        რამ</p>
-                </div>
-            </div>
+        <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Set background color */
+    color: #fff; /* Text color */
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background-color: #000;
+    }
+    50% {
+        background-color: #111;
+    }
+    100% {
+        background-color: #000;
+    }
+}
+
+body {
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .icon .logo {
+    color: #ff6600;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+}
+
+.navbar .menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar .menu ul li {
+    margin: 0 20px;
+}
+
+.navbar .menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu ul li a:hover {
+    color: #ff6600;
+}
+
+.navbar .search {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .srch {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.navbar .srch:focus {
+    border-color: #ff6600;
+}
+
+.navbar .btn {
+    background-color: #ff6600;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .btn:hover {
+    background-color: #e65c00;
+}
+
+/* Scrollable content */
+.scrollable-content {
+    margin-top: 50px;
+    padding: 40px;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Content section styling */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.text-section {
+    width: 80%;
+    margin-bottom: 40px;
+}
+
+.animated-title {
+    font-size: 48px;
+    color: #ff6600;
+    margin-bottom: 20px;
+    font-weight: 700;
+    animation: fadeIn 3s ease-in-out;
+}
+
+.animated-paragraph {
+    font-size: 22px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.credits {
+    font-style: italic;
+    color: #ff6600;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+
         </div>
          <footer>
 
