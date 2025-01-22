@@ -37,7 +37,7 @@ class LoginForm(FlaskForm):
     email = StringField('Email', validators=[InputRequired(), Email(message='Invalid email')])
     password = PasswordField('Password', validators=[InputRequired()])
 
-#
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -50,7 +50,7 @@ def login():
         if user and check_password_hash(user.password, form.password.data):
             login_user(user)
             flash('Login successful!', 'success')
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('index'))
         else:
             flash('Invalid email or password', 'danger')
     return render_template('login.html', form=form)
@@ -84,7 +84,7 @@ def logout():
     return redirect(url_for('login'))
 
 @app.route('/about')
-def about():
+def about_html():
     return render_template('about.html')
 
 @app.route('/feedback')
@@ -115,17 +115,22 @@ def error_404():
 def adjara():
     return render_template('adjara.html')
 
-@app.route('/Abkhazia')
+@app.route('/index')
+def index_html():
+    return render_template('index.html')
+
+
+@app.route('/abkhazia')
 def abkhazia():
-    return render_template('Abkhazia.html')
+    return render_template('abkhazia.html')
 
-@app.route('/Guria')
+@app.route('/guria')
 def guria():
-    return render_template('Guria.html')
+    return render_template('guria.html')
 
-@app.route('/Imereti')
+@app.route('/imereti')
 def imereti():
-    return render_template('Imereti.html')
+    return render_template('imereti.html')
 
 @app.route('/kakheti')
 def kakheti():
@@ -135,9 +140,9 @@ def kakheti():
 def kvemo_kartli():
     return render_template('kvemo_kartli.html')
 
-@app.route('/Mtskheta')
+@app.route('/mtskheta')
 def mtskheta():
-    return render_template('Mtskheta.html')
+    return render_template('mtskheta.html')
 
 @app.route('/samegrelo')
 def samegrelo():
@@ -154,6 +159,11 @@ def tbilisi():
 @app.route('/home')
 def home():
     return render_template('home.html')
+
+@app.before_request
+def handle_html_extension():
+    if request.path.endswith('.html'):
+        return redirect(request.path[:-5], code=301)
 
 if __name__ == '__main__':
     with app.app_context():
